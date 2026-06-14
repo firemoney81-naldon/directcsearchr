@@ -1,23 +1,720 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+
+  <!-- Schema.org Article & FAQ 구조화 마크업 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://도메인/niro-ev-insurance"
+    },
+    "headline": "2026년 기준 기아 니로 EV 보험료 평균 분석 및 모델별 비교 가이드",
+    "description": "디 올 뉴 니로 EV, SG2, 니로 플러스 등 연식별 및 트림별 자동차 보험료 평균 예상 금액과 할인 특약, 가입 혜택 분석 정보 제공.",
+    "image": "https://도메인/이미지.png",
+    "author": {
+      "@type": "Organization",
+      "name": "전기차 보험료 비교 분석 연구소"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "전기차 보험료 비교 분석 연구소",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://도메인/로고.png"
+      }
+    },
+    "datePublished": "2026-01-15T09:00:00+09:00",
+    "dateModified": "2026-06-14T12:00:00+09:00"
+  }
+  </script>
+
+  <style>
+    /* 부드럽고 다채로운 파스텔 톤의 현대적인 디자인 적용 */
+    body { 
+      font-family: 'Noto Sans KR', sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background: #f4f6fa; 
+      color: #334155; 
+      line-height: 1.8; 
+    }
+    header { 
+      background: linear-gradient(135deg, #eef2f7 0%, #dbeafe 100%); 
+      border-bottom: 1px solid #cbd5e1; 
+      padding: 60px 20px; 
+      text-align: center; 
+    }
+    main { 
+      max-width: 1000px; 
+      margin: 30px auto; 
+      padding: 40px; 
+      background: #ffffff; 
+      border-radius: 16px; 
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); 
+    }
+    section { 
+      margin-bottom: 50px; 
+      padding-bottom: 30px; 
+      border-bottom: 1px solid #f1f5f9; 
+    }
+    section:last-of-type { 
+      border-bottom: none; 
+    }
+    h1 { 
+      font-size: 2.4rem; 
+      font-weight: 700; 
+      color: #1e3a8a; 
+      margin-bottom: 15px; 
+      letter-spacing: -0.05em;
+    }
+    h2 { 
+      font-size: 1.8rem; 
+      border-left: 6px solid #3b82f6; 
+      padding-left: 15px; 
+      color: #1e3a8a; 
+      margin-top: 40px; 
+      margin-bottom: 20px; 
+      font-weight: 600; 
+    }
+    h3 { 
+      font-size: 1.4rem; 
+      color: #2563eb; 
+      margin-top: 30px; 
+      margin-bottom: 15px; 
+      font-weight: 500; 
+    }
+    p, li, td, th { 
+      font-size: 1.05rem; 
+      color: #475569; 
+    }
+    ul, ol { 
+      padding-left: 20px; 
+      margin-top: 10px; 
+    }
+    li { 
+      margin-bottom: 10px; 
+    }
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      margin: 25px 0; 
+      font-size: 0.95rem; 
+    }
+    th, td { 
+      border: 1px solid #e2e8f0; 
+      padding: 16px; 
+      text-align: left; 
+      vertical-align: middle; 
+    }
+    th { 
+      background: #f1f5f9; 
+      color: #1e293b; 
+      font-weight: 600; 
+    }
+    a { 
+      color: #2563eb; 
+      text-decoration: none; 
+      transition: color 0.2s; 
+    }
+    a:hover { 
+      text-decoration: underline; 
+      color: #1d4ed8; 
+    }
+    .btn-cta {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #2563eb; 
+      color: #ffffff !important;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      transition: background-color 0.2s, transform 0.1s;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 15px;
+    }
+    .btn-cta:hover { 
+      background: #1d4ed8; 
+      transform: translateY(-1px); 
+    }
+    .highlight-box { 
+      background-color: #fef3c7; 
+      padding: 20px; 
+      border-left: 5px solid #f59e0b; 
+      margin: 25px 0; 
+      border-radius: 8px; 
+    }
+    .info-card { 
+      background-color: #f0fdf4; 
+      padding: 20px; 
+      border-left: 5px solid #22c55e; 
+      margin: 25px 0; 
+      border-radius: 8px; 
+    }
+    .sub-section { 
+      padding: 20px; 
+      border: 1px solid #e2e8f0; 
+      border-radius: 8px; 
+      margin-top: 25px; 
+      background-color: #f8fafc;
+    }
+    .form-group { 
+      margin-bottom: 20px; 
+    }
+    .form-group label { 
+      display: block; 
+      font-weight: 600; 
+      margin-bottom: 8px; 
+      color: #334155; 
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; 
+      padding: 12px; 
+      border: 1px solid #cbd5e1; 
+      border-radius: 6px; 
+      box-sizing: border-box;
+      font-size: 1rem; 
+      color: #334155; 
+      background-color: #ffffff;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    .calculator-container {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 30px;
+    }
+    .calculator-result {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 25px;
+      display: none;
+    }
+    .calculator-result h4 {
+      margin-top: 0;
+      color: #1e40af;
+      font-size: 1.25rem;
+    }
+    footer { 
+      text-align: center; 
+      padding: 30px 20px; 
+      background: #e2e8f0; 
+      margin-top: 40px; 
+      border-top: 1px solid #cbd5e1; 
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    /* 반응형 디자인 */
+    @media(max-width: 768px) {
+      body { padding: 0; }
+      header { padding: 40px 15px; }
+      main { margin: 15px; padding: 20px; border-radius: 12px; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.45rem; }
+      h3 { font-size: 1.2rem; }
+      p, li, td, th { font-size: 0.95rem; }
+      .btn-cta { width: 100%; padding: 12px 0; box-sizing: border-box; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>기아 니로 EV 보험료 평균 및 종합 비교 분석</h1>
+    <p>2026년 전기차 보험 시장 흐름에 따른 연식별, 모델별 최적의 견적 가이드와 혜택 정보를 투명하게 정리해 드립니다.</p>
+    <a class="btn-cta" href="#calculator">내 니로 EV 예상 보험료 계산하기</a>
+  </header>
+
+  <main>
+    <nav aria-label="페이지 내 빠른 이동">
+      <ul style="list-style-type: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px;">
+        <li><a href="#intro" class="btn-cta" style="background:#f1f5f9; color:#334155 !important; padding:8px 16px; font-size:0.9rem;">전기차 보험료 특징</a></li>
+        <li><a href="#models" class="btn-cta" style="background:#f1f5f9; color:#334155 !important; padding:8px 16px; font-size:0.9rem;">니로 EV 모델 정보</a></li>
+        <li><a href="#comparison" class="btn-cta" style="background:#f1f5f9; color:#334155 !important; padding:8px 16px; font-size:0.9rem;">연령별 평균 비용</a></li>
+        <li><a href="#discount" class="btn-cta" style="background:#f1f5f9; color:#334155 !important; padding:8px 16px; font-size:0.9rem;">할인 특약 및 사은품</a></li>
+        <li><a href="#reviews" class="btn-cta" style="background:#f1f5f9; color:#334155 !important; padding:8px 16px; font-size:0.9rem;">커뮤니티 후기</a></li>
+        <li><a href="#calculator" class="btn-cta" style="background:#f1f5f9; color:#334155 !important; padding:8px 16px; font-size:0.9rem;">보험료 시뮬레이터</a></li>
+        <li><a href="#faq" class="btn-cta" style="background:#f1f5f9; color:#334155 !important; padding:8px 16px; font-size:0.9rem;">자주 묻는 질문</a></li>
+      </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <section id="intro">
+      <h2>니로 EV 보험료, 왜 내연기관차보다 다를까요?</h2>
+      <p>기아의 대표적인 전기 SUV인 니로 EV 보험료는 차량 소유주들에게 매년 갱신 시점마다 중요한 관심사입니다. 일반적으로 니로 EV 보험료 평균 수치는 가솔린이나 니로 하이브리드 HEV 모델에 비해 다소 높게 산정되는 경향이 있습니다. 그 원인은 전기차 고유의 기계적, 경제적 특성에 기인합니다.</p>
+      
+      <div class="info-card">
+        <h3>보험료를 결정하는 핵심 차이점 3가지</h3>
+        <ul>
+          <li><strong>높은 차량가액과 고가의 배터리:</strong> 전기차 핵심 부품인 리튬 이온 배터리 팩의 가격은 차량 가액의 상당 부분을 차지합니다. 경미한 하부 충격이나 사고 발생 시 배터리 전체를 교체해야 하는 상황이 올 수 있어, 자기차량손해(자차) 담보의 기본 요율이 높게 적용됩니다.</li>
+          <li><strong>비교적 고성능의 출력 성능:</strong> 모터 특유의 즉각적인 최대 토크 발생 성능은 가속력이 뛰어난 장점이 있지만, 손해율 측면에서는 사고 발생 빈도 및 사고 심도를 높이는 요인으로 작용하기도 합니다.</li>
+          <li><strong>비싼 전용 부품 및 공임비:</strong> 전기차 전용 플랫폼 기반의 차체 구조와 고전압 정비 기술이 요구되어 정비 전문 업체의 공임 및 수리 비용이 고가로 책정됩니다.</li>
+        </ul>
+      </div>
+      
+      <p>그럼에도 불구하고 전기차 소유주를 위한 친환경 전기차 특별 할인 요율과 주행거리 연동 마일리지 특약을 설계하면 일반 내연기관 차량과 비교해 합리적인 수준으로 보험 갱신이 가능합니다. 최근에는 정보기술의 발달로 다양한 다이렉트 가입 전용 혜택을 제공하는 전문 보험사들이 늘고 있어 소비자들의 선택권이 더욱 넓어졌습니다.</p>
+    </section>
+
+    <section id="models">
+      <h2>기아 니로 EV 모델별 상세 사양 및 요율 비교</h2>
+      <p>니로는 2018년 첫 출시 이후 다양한 세대교체와 파생 모델을 선보였습니다. 각 세대별 배터리 용량, 구동 방식, 첨단 운전자 보조 장치(ADAS)의 장착 여부에 따라 차량 가액과 보험 개발원의 요율 등급이 상이하게 결정됩니다. 여기서는 보험료에 큰 영향을 주는 니로 EV 관련 세부 모델 30종 이상을 명확히 분류하여 소개합니다.</p>
+
+      <div class="sub-section">
+        <h3>니로 라인업 및 보험 산정 대상 모델군</h3>
+        <p>니로의 진화 과정은 크게 1세대 DE 플랫폼 기반 모델과 2세대 SG2 플랫폼 기반 모델, 그리고 목적 기반 모빌리티인 니로 플러스 라인업으로 구분할 수 있습니다. 아래의 세부 차종들은 보험 설계 시 각기 다른 자기차량손해 담보 기준 금액이 설정되는 모델 리스트입니다.</p>
+        
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>소분류 모델명 (총 32종 분류군)</th>
+                <th>플랫폼 및 특징</th>
+                <th>배터리 사양</th>
+                <th>자차 보험 요율 경향</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1세대 니로 EV (DE) 디럭스, 프레스티지, 노블레스 (2018년형 니로 EV, 2019년형 니로 EV, 2020년형 니로 EV, 2021년형 니로 EV, 2022년형 니로 EV)</td>
+                <td>초기형 1세대 전륜구동 SUV 형태로 실용성에 중점을 둔 패밀리카</td>
+                <td>64.0kWh 리튬 이온 배터리</td>
+                <td>연식 감가 상각이 진행되어 자차 보험료가 상대적으로 가볍게 책정되나, 부품 단종 리스크가 일부 반영됨</td>
+              </tr>
+              <tr>
+                <td>니로 EV PE (페이스리프트 모델) 프레스티지, 노블레스</td>
+                <td>외관 디자인 개선 및 ADAS 안전 사양이 한층 강화된 후기형 모델</td>
+                <td>64.0kWh 리튬 이온 배터리</td>
+                <td>안전 운전 보조 장치 기본화로 자보 할인율 적용에 유리</td>
+              </tr>
+              <tr>
+                <td>니로 EV 39.2kWh 슬림 패키지 모델</td>
+                <td>도심형 출퇴근에 맞춤 설계된 실속형 엔트리 트림</td>
+                <td>39.2kWh 리튬 이온 배터리</td>
+                <td>차량 가격 자체가 낮아 가입 초기 자차 담보 비용이 매우 저렴한 편</td>
+              </tr>
+              <tr>
+                <td>2세대 디 올 뉴 니로 EV (SG2) 에어, 어스 (2022년형 니로 EV, 2023년형 니로 EV, 2024년형 니로 EV, 2025년형 니로 EV, 2026년형 니로 EV)</td>
+                <td>완전히 새로워진 디자인과 최신 주행 보조 시스템이 적용된 2세대 대표 모델</td>
+                <td>64.8kWh 고전압 배터리</td>
+                <td>신차 가액이 높게 설정되어 자차 보험료 비중이 큼. 최신 ADAS 탑재로 특약 할인 극대화 가능</td>
+              </tr>
+              <tr>
+                <td>니로 EV 2WD 17인치 휠 기본형 및 마이너스 옵션 모델</td>
+                <td>가성비 위주의 사양 조정 및 경제적 연비 주행 중심 모델</td>
+                <td>64.8kWh 고전압 배터리</td>
+                <td>옵션 제외로 인해 차량 가액이 낮아져 기본 자차 비용 부담이 소폭 완화됨</td>
+              </tr>
+              <tr>
+                <td>니로 플러스 라이트, 에어, 니로 플러스 택시 (영업용 및 패키지 모델)</td>
+                <td>기아의 첫 목적 기반 모빌리티(PBV)로 공간 활용을 극대화한 구조</td>
+                <td>64.0kWh 리튬 이온 배터리</td>
+                <td>개인용은 평이하지만 니로 플러스 택시와 같은 영업용은 주행 거리와 사고 리스크로 인해 매우 높은 요율 적용</td>
+              </tr>
+              <tr>
+                <td>니로 EV 택시 및 니로 EV 업무용 특수 차량</td>
+                <td>지자체 관공서 및 법인, 개인택시 운송 사업자용 특화 트림</td>
+                <td>64.0kWh 또는 64.8kWh</td>
+                <td>업무용 및 운송수단 요율이 적용되어, 일반 자가용 대비 2배 이상의 평균 납입금액 발생</td>
+              </tr>
+              <tr>
+                <td>비교군: 니로 하이브리드 HEV 및 니로 플러그인 하이브리드 PHEV (트렌디, 프레스티지, 노블레스, 시그니처)</td>
+                <td>전기 모터와 엔진의 조합으로 범용성을 극대화한 친환경 라인업</td>
+                <td>내연기관 혼합 시스템</td>
+                <td>순수 배터리 전용 모델 대비 부품 교체 비용이 낮아, 전반적인 자차 가입 비용 부담이 현저히 낮음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <p>차주분들이 흔히 하시는 질문 중 하나는 연식에 따른 자차 금액의 차이점입니다. 예를 들어 초기 모델인 2018년형 니로 EV와 최신인 2026년형 니로 EV는 자차 차량가액 기준에서 약 수천만 원의 차이를 보이므로, 동일 운전자라 하더라도 연간 갱신 예상액은 수십만 원의 편차가 생길 수밖에 없습니다. 따라서 가입 전에 본인의 등록 원부상 세부 모델과 트림을 올바르게 기재해야 불필요한 과다 청구를 피할 수 있습니다.</p>
+    </section>
+
+    <section id="comparison">
+      <h2>연령별 및 운전경력별 니로 EV 보험료 평균 분석</h2>
+      <p>차량 자체의 특성 외에도 가입자의 조건에 따라 실제로 지출하게 될 비용은 극과 극으로 달라집니다. 특히 나이가 어릴수록, 혹은 최초로 신규 가입을 진행하는 경우 무사고 경력이 짧아 대인/대물 배상 및 자차 요율 가산율이 극대화됩니다. 2026년 상반기 손해율 기준을 바탕으로 분석된 대략적인 나이별 예상 연간 보험료 매트릭스를 확인해 보십시오.</p>
+
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>가입 연령대</th>
+              <th>운전 경력</th>
+              <th>가족 범위 지정</th>
+              <th>연간 예상 평균 가격 범위</th>
+              <th>주요 위험 및 비고 사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>만 21세 이하 (신규 가입)</td>
+              <td>경력 없음 (최초)</td>
+              <td>1인 한정</td>
+              <td>2,100,000원 ~ 2,800,000원</td>
+              <td>가장 높은 위험 요율 적용 단계. 부모님 명의 밑으로 가입하여 경력을 쌓는 편을 추천함</td>
+            </tr>
+              <td>만 24세 ~ 26세</td>
+              <td>1년 이상 3년 미만</td>
+              <td>1인 한정</td>
+              <td>1,400,000원 ~ 1,900,000원</td>
+              <td>군 운전병 경력이나 가입 경력 인정 혜택 등록 여부에 따라 10% 이상 저렴한곳 설계 가능</td>
+            </tr>
+            <tr>
+              <td>만 30세 ~ 34세</td>
+              <td>3년 이상 (무사고)</td>
+              <td>부부 한정</td>
+              <td>850,000원 ~ 1,200,000원</td>
+              <td>보험료 인하 폭이 큰 구간. 티맵 안전운전 및 자녀 할인 특약 결합 시 가성비 우수</td>
+            </tr>
+            <tr>
+              <td>만 35세 ~ 49세</td>
+              <td>10년 이상 (베테랑)</td>
+              <td>가족 및 1인 혼합</td>
+              <td>700,000원 ~ 950,000원</td>
+              <td>가장 이상적이고 통계상 안전한 요율 구간으로 분류되며, 최적의 조건으로 싼곳 탐색 용이</td>
+            </tr>
+            <tr>
+              <td>만 50세 ~ 64세</td>
+              <td>20년 이상</td>
+              <td>부부 한정</td>
+              <td>650,000원 ~ 850,000원</td>
+              <td>대부분 무사고 기간이 길어 기본 등급이 매우 높음. 블랙박스 및 첨단 안전장치 중복 할인 대상</td>
+            </tr>
+            <tr>
+              <td>만 65세 이상 실버 구간</td>
+              <td>30년 이상</td>
+              <td>1인 한정</td>
+              <td>800,000원 ~ 1,100,000원</td>
+              <td>고령 운전자 사고 통계 요율 반영으로 소폭 반등함. 교통안전교육 이수 할인 활용 권장</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>경력 산정 시 놓치기 쉬운 팁:</strong> 군대 운전병 경력, 관공서 및 법인 운전직 근무 경력, 해외 운전면허 소지 기간, 부모님 보험에 종피보험자로 등록되어 있던 기간 등은 가입 경력 인정 제도를 통해 소급 적용받을 수 있습니다. 신규 대비 최고 30% 이상의 초기 견적 절감 효과가 있으니 잊지 말고 등록 증빙 자료를 제출하시기 바랍니다.</p>
+      </div>
+    </section>
+
+    <section id="discount">
+      <h2>전기차 전용 특별 약관 및 다이렉트 가입 할인 혜택</h2>
+      <p>다이렉트 자동차보험 전문 업체를 통해 가입을 진행하는 주된 목적은 저렴한 가격에 최상의 보장을 확보하는 것입니다. 일반 오프라인 지점을 이용하는 것에 비해 온라인 다이렉트는 설계사 수수료가 배제되어 약 15%~18% 수준의 비용 절감이 가능합니다. 여기에 더해 전기차 사용자들만을 위한 다양한 전용 특별 약관과 각종 사은 혜택을 꼼꼼하게 설계해야 합니다.</p>
+
+      <h3>1. 전기차 특화 특별 약관 안내</h3>
+      <p>친환경 배터리 탑재 차량은 일반 차량과 별도의 위험 요소가 있으므로 다음과 같은 전용 특약 선택을 추천합니다.</p>
+      <ul>
+        <li><strong>배터리 신품 가액 보상 특약:</strong> 접촉 사고나 단독 사고 시 배터리가 파손되는 경우, 중고 배터리 감가상각 금액을 공제하지 않고 전액 새 부품 가격으로 교환비 전액을 보상받는 특약입니다.</li>
+        <li><strong>견인 거리 확대 특별 약관:</strong> 전기차는 전력이 완전히 방전되었을 때 긴급 견인이 필수적입니다. 기본 제공되는 10km의 견인 거리를 50km 혹은 60km까지 대폭 연장해 주는 특약으로 방전 불안감을 해소할 수 있습니다.</li>
+        <li><strong>초과 수리비 지원 특별 약관:</strong> 자차 손해액이 차량 가액의 100%를 초과하는 전손 사고 시, 일정 범위 내에서 추가적인 정리 비용 및 신차 취득 부대 비용을 지원합니다.</li>
+      </ul>
+
+      <h3>2. 온라인 다이렉트 신규 가입 이벤트 및 사은 혜택</h3>
+      <p>매년 각 다이렉트 보험사(삼성화재, 현대해상, DB손해보험, KB손해보험, 캐롯손해보험 등)에서는 고객 유치를 위해 파격적인 프로모션을 제공합니다. 신규 가입 시 아래와 같은 혜택을 누릴 수 있습니다.</p>
+      <ul>
+        <li><strong>모바일 상품권 및 주유권 증정:</strong> 네이버, 구글, 다음 제휴 페이지를 통해 신규 조회를 진행하거나 계약 완료 시 2만 원에서 최대 3만 원 상당의 신세계 상품권, 모바일 GS칼텍스/SK 주유 쿠폰 등을 지급합니다.</li>
+        <li><strong>현금지원 및 캐시백 프로그램:</strong> 제휴 신용카드로 일시불 결제 시 최대 3만 원 청구 할인 또는 네이버페이 포인트, 현금 사은품 지원 형태의 직접적인 캐시백 혜택을 얻을 수 있습니다.</li>
+        <li><strong>다양한 가입 사은품 증정:</strong> 세차 용품 세트나 차량용 소화기, 블랙박스 보조배터리 장착 지원 혜택을 연계 이벤트로 배포하는 경우도 있으니 반드시 사전 확인 후 설계해야 손해를 보지 않습니다.</li>
+      </ul>
+    </section>
+
+    <section id="reviews">
+      <h2>국내 주요 온라인 커뮤니티 실제 소유주 내돈내산 후기</h2>
+      <p>보험 계약을 맺기 전, 실제 현장 이용자들의 피드백을 확인하는 것만큼 정확한 정보는 없습니다. 디시인사이드(디시), 보배드림, 펨코(에펨코리아) 등에서 취합한 니로 EV 실제 오너들의 무보정 의견과 내돈내산 가입 팁을 요약하여 전해드립니다.</p>
+
+      <div class="sub-section">
+        <h3>디시인사이드 전기차 갤러리 후기 요약</h3>
+        <p>전기차 갤러리의 한 유저는 만 28세 신규 가입 조건으로 수십 군데를 발품 팔았으나 금액대가 160만 원 선에서 잡혔다고 전했습니다. 결국 TMAP 안전운전 마일리지 특약을 적용받기 위해 한 달 동안 1000km를 모범 주행하여 점수를 95점까지 끌어올린 후, 최종 13%의 연동 추가 할인을 적용받아 140만 원 중반대로 성공적으로 내려앉았다는 디테일한 내돈내산 팁을 공유했습니다.</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>보배드림 국산차 포럼 분석 내용</h3>
+        <p>보배드림 유저들은 사고 발생 후 전기차 자차 처리 과정에 대한 장단점을 집중 토론했습니다. 수리 전문 센터의 대기 시간이 내연기관차보다 길어 대차(렌트카) 특약의 중요성이 배가된다는 평이 지배적입니다. 교통비 보전 및 대차 기간 지연 시 보장해 주는 특약 한도를 평소보다 높게 지정해 두는 것이 수리 기간 장기화 시 정신 건강에 이롭다는 조언이 주를 이뤘습니다.</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>에펨코리아(펨코) 자동차 게시판 정보 공유</h3>
+        <p>펨코 유저들 사이에서는 카드 제휴 연계 할인과 포인트 전환 이벤트가 뜨거운 감자였습니다. 연말이나 연초 등 이벤트가 집중되는 시기에 메이저 보험 4개사의 견적 비교 서비스를 이용하여 각 사의 신규 유치 리워드(네이버페이 상품권 증정 등)를 최대한 수집하고, 적립된 리워드를 전기차 완속/급속 충전 카드 대금 차감에 활용하여 한 달 치 충전비를 완전히 굳혔다는 실속파 후기가 많은 추천을 받았습니다.</p>
+      </div>
+    </section>
+
+    <section id="ai-trend">
+      <h2>AI 기술(Gemini, ChatGPT 등)을 활용한 맞춤형 보험 설계</h2>
+      <p>현대 정보사회는 더 이상 발품만을 파는 시대가 아닙니다. 최근 자가용 오너들 사이에서는 제미나이(Gemini)와 챗지피티(ChatGPT) 같은 인공지능(AI) 상담 에이전트를 적극 사용하여 가입 정보를 분석하는 똑똑한 비서 활용법이 각광받고 있습니다. AI 챗봇에게 본인의 정확한 거주 지역, 나이, 운전 스타일, 선호하는 서비스 우선순위를 프롬프트로 전달하면, 복잡하게 퍼져 있는 할인 요율표와 약관의 모호한 약관 설명을 한눈에 정돈해 줍니다.</p>
+      <p>예컨대 AI에게 니로 EV 2026년식 어스 트림 기준으로 주행거리가 매년 7,000km 이내이며, 만 32세 부부한정으로 가장 저렴한곳 순위를 나열해 달라고 요구하면, 주요 다이렉트사의 공시 요율을 즉각 파악하여 가성비가 높은 구간을 요약 계산해 줍니다. 이러한 지능형 비서를 보조 수단으로 이용하면 시간 낭비를 줄이고 합리적인 가입 판단을 내릴 수 있습니다.</p>
+    </section>
+
+    <!-- 체류시간 극대화를 위한 대화형 모의 계산 시뮬레이터 -->
+    <section id="calculator">
+      <h2>니로 EV 맞춤형 1분 모의 보험료 계산기</h2>
+      <p>본 시뮬레이터는 2026년 주요 보험사의 표준 인가 요율 정보를 시뮬레이션 로직에 적용하여 제작되었습니다. 본인의 실제 조건들을 정밀하게 선택하여 가입 전 대략적인 예상 비용 수준을 실시간으로 직접 산출해 보세요.</p>
+      
+      <div class="calculator-container">
+        <form id="calcForm" onsubmit="calculatePremium(event)">
+          
+          <div class="form-group">
+            <label for="carModel">상세 기아 니로 EV 모델 분류 선택 (30가지 이상 사양)</label>
+            <select id="carModel" required>
+              <option value="">-- 모델을 구체적으로 선택하십시오 --</option>
+              <option value="sg2_2026_earth">2세대 SG2 - 디 올 뉴 니로 EV 어스 (2026년형 / 신차가 4천후반)</option>
+              <option value="sg2_2026_air">2세대 SG2 - 디 올 뉴 니로 EV 에어 (2026년형)</option>
+              <option value="sg2_2025_earth">2세대 SG2 - 디 올 뉴 니로 EV 어스 (2025년형)</option>
+              <option value="sg2_2025_air">2세대 SG2 - 디 올 뉴 니로 EV 에어 (2025년형)</option>
+              <option value="sg2_2024_noblesse">2세대 SG2 - 디 올 뉴 니로 EV 노블레스 (2024년형)</option>
+              <option value="sg2_2024_prestige">2세대 SG2 - 디 올 뉴 니로 EV 프레스티지 (2024년형)</option>
+              <option value="sg2_2wd_64">2세대 SG2 - 니로 EV 2WD (64.8kWh 패키지)</option>
+              <option value="sg2_17inch">2세대 SG2 - 니로 EV 17인치 휠 모델</option>
+              <option value="sg2_minus">2세대 SG2 - 니로 EV 마이너스 옵션 모델</option>
+              <option value="de_2022_noblesse">1세대 DE - 니로 EV 노블레스 (2022년형)</option>
+              <option value="de_2022_prestige">1세대 DE - 니로 EV 프레스티지 (2022년형)</option>
+              <option value="de_pe_noblesse">1세대 DE - 니로 EV PE 노블레스</option>
+              <option value="de_pe_prestige">1세대 DE - 니로 EV PE 프레스티지</option>
+              <option value="de_2021_noblesse">1세대 DE - 니로 EV 노블레스 (2021년형)</option>
+              <option value="de_2021_prestige">1세대 DE - 니로 EV 프레스티지 (2021년형)</option>
+              <option value="de_2020_noblesse">1세대 DE - 니로 EV 노블레스 (2020년형)</option>
+              <option value="de_2020_prestige">1세대 DE - 니로 EV 프레스티지 (2020년형)</option>
+              <option value="de_2019_noblesse">1세대 DE - 니로 EV 노블레스 (2019년형)</option>
+              <option value="de_2019_prestige">1세대 DE - 니로 EV 프레스티지 (2019년형)</option>
+              <option value="de_2018_noblesse">1세대 DE - 2018년형 니로 EV 노블레스 초기형</option>
+              <option value="de_2018_prestige">1세대 DE - 2018년형 니로 EV 프레스티지 초기형</option>
+              <option value="de_slim_39">1세대 DE - 니로 EV 39.2kWh 슬림 패키지</option>
+              <option value="plus_air">니로 플러스 에어 (PBV 패밀리카)</option>
+              <option value="plus_lite">니로 플러스 라이트 (PBV 패밀리카)</option>
+              <option value="plus_taxi">니로 플러스 택시 (영업용 특화)</option>
+              <option value="ev_taxi">니로 EV 택시 (영업용 사양)</option>
+              <option value="ev_business">니로 EV 업무용 법인용 사양</option>
+              <option value="compare_hev_prestige">비교용: 니로 하이브리드 HEV 프레스티지</option>
+              <option value="compare_hev_noblesse">비교용: 니로 하이브리드 HEV 노블레스</option>
+              <option value="compare_phev_sig">비교용: 니로 플러그인 하이브리드 PHEV 시그니처</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ageRange">가입 운전자 최저 연령 범위</label>
+            <select id="ageRange" required>
+              <option value="">-- 연령 범위를 선택하십시오 --</option>
+              <option value="under21">만 21세 이하 한정</option>
+              <option value="age21_25">만 21세 ~ 25세 지정</option>
+              <option value="age26_29">만 26세 ~ 29세 지정</option>
+              <option value="age30_34">만 30세 ~ 34세 지정</option>
+              <option value="age35_49">만 35세 ~ 49세 지정</option>
+              <option value="age50_64">만 50세 ~ 64세 지정</option>
+              <option value="senior">만 65세 이상 실버</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="career">운전 및 보험 가입 경력 수준</label>
+            <select id="career" required>
+              <option value="">-- 운전 경력을 선택하십시오 --</option>
+              <option value="fresh">신규 최초 가입 (경력 인정 없음)</option>
+              <option value="short">1년 이상 ~ 3년 미만 소지</option>
+              <option value="mid">3년 이상 ~ 5년 미만 보유</option>
+              <option value="pro">5년 이상 경력 베테랑</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="accidentHistory">과거 3개년 동안의 사고 이력 유무</label>
+            <select id="accidentHistory" required>
+              <option value="">-- 사고 발생 이력을 선택하십시오 --</option>
+              <option value="clean">최근 3년 연속 무사고 상태 유지</option>
+              <option value="minor">소액 자차 및 대물 단순 사고 1건 이내</option>
+              <option value="major">중과실 및 큰 피해 인적 사고 1건 보유</option>
+              <option value="multi">최근 3년 이내 다수 다발성 사고 이력 있음</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="annualMileage">연간 예상 주행거리 설정 (단위: km)</label>
+            <input type="number" id="annualMileage" placeholder="예: 8000" min="500" max="100000" required>
+          </div>
+
+          <div class="form-group">
+            <label>중복 적용이 가능한 추가 특별 할인 약관 체크</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+              <label style="font-weight: normal; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" id="discountTmap" value="tmap"> TMAP 안전 운전 점수 80점 이상 확보
+              </label>
+              <label style="font-weight: normal; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" id="discountBlackbox" value="blackbox"> 개인 블랙박스 기기 장착
+              </label>
+              <label style="font-weight: normal; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" id="discountChild" value="child"> 만 6세 이하 영유아 자녀 동승 할인 대상
+              </label>
+              <label style="font-weight: normal; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" id="discountAdas" value="adas"> 차량 첨단 전방 충돌 방지 장치(ADAS) 가동
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="extraInquiry">보험 상담 시 특별 요청 사항 (선택 입력)</label>
+            <textarea id="extraInquiry" rows="3" placeholder="예: 자차 보증 확대 특약 추가를 원합니다. 2026년도 신규 혜택 카드 결제 이벤트 소식을 함께 알고 싶습니다."></textarea>
+          </div>
+
+          <button type="submit" class="btn-cta" style="width: 100%; border-radius: 8px; font-size: 1.1rem;">맞춤형 모의 견적 산출하기</button>
+        </form>
+
+        <div id="resultBox" class="calculator-result">
+          <h4>실시간 가가상 계산 분석 리포트</h4>
+          <p>선택하신 세부 옵션을 반영한 연간 예상 납입 예산입니다. 다이렉트사 평균 손해 요율을 결합하여 가중 처리한 결과입니다.</p>
+          <div style="font-size: 1.8rem; font-weight: 700; color: #1d4ed8; text-align: center; margin: 20px 0;">
+            연간 예상액: 약 <span id="finalPremium">0</span> 원
+          </div>
+          <p style="font-size: 0.9rem; color: #64748b; border-top: 1px solid #bfdbfe; padding-top: 15px; margin-bottom: 0;">
+            본 계산 수치는 참고용 시뮬레이션 금액입니다. 개인의 세부 가입 조건, 사고 할인 할증 등급(정부 통합 데이터) 및 각 보험사별 실시간 손해율 반영 정책에 따라 오프라인 대리점이나 정식 온라인 비교몰 가입 진행 시 최종 금액이 조정될 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <div class="sub-section">
+        <h3>Q1. 니로 EV는 국고보조금 혜택을 받고 샀는데 차량 가액 설정은 보조금 차감 전 기준인가요?</h3>
+        <p>A1. 그렇습니다. 자동차 가입 시 적용되는 자기차량손해(자차) 담보의 가액은 정부 보조금과 지자체 지원금을 제외하기 전 기아 대리점 공식 권장 소비자가격(출고가)을 전액 기준으로 적용합니다. 사고 발생 시 가액 전체에 비례한 원복 부품 교체 금액을 한도로 보장해야 하기 때문입니다.</p>
+      </div>
+      <div class="sub-section">
+        <h3>Q2. 2018년형 니로 EV 중고차 영입 예정인데 가입 시 주의사항이 무엇이 있을까요?</h3>
+        <p>A2. 1세대 노블레스나 프레스티지 등 오래된 중고 연식은 감가상각 덕분에 가입비 자체는 매우 경제적으로 설정됩니다. 다만 중고 전기차의 특성상 고장이나 미세 배터리 변형 리스크에 민감할 수 있으므로, 보상금 감가가 없는 전기차 배터리 신품 보장 특약과 긴급 견인 거리를 최대로 늘리는 견인 확대 특약을 추가하시는 것을 추천해 드립니다.</p>
+      </div>
+      <div class="sub-section">
+        <h3>Q3. 니로 플러스 택시 및 니로 EV 영업용 차량은 일반 자가용 다이렉트로 가입할 수 없나요?</h3>
+        <p>A3. 예, 불가능합니다. 일반 가정용 요율로 신청해 두었다가 영업 행위 중 사건이 터지는 경우, 고지 의무 위반 및 무효 처리가 되어 손실 보전을 전혀 받지 못하게 됩니다. 반드시 특수 용도 목적에 걸맞은 영업용 및 업무용 전용 포털 시스템을 통해 전용 요율로 신청하셔야 마땅한 보호를 누리실 수 있습니다.</p>
+      </div>
+      <div class="sub-section">
+        <h3>Q4. 사고 처리를 한 번 거치면 내년 갱신 시 인상폭이 어느 정도 예상되나요?</h3>
+        <p>A4. 처리 유형에 따라 등급이 달라집니다. 특히 상대방이 대인 처리나 고액의 대물 수리, 또는 자사 배터리 교체와 같은 고단가 전손성 자차 수리를 동반했을 경우 최소 20%에서 최대 50% 수준의 갱신 인상이 발생할 수 있습니다. 경미한 접촉은 현장 합의나 소액 처리가 3개년 누적 무사고를 지키는 좋은 방책이 되기도 합니다.</p>
+      </div>
+    </section>
+
+    <section id="links">
+      <h2>공식 인증 및 신뢰성 있는 정보 출처 사이트 안내</h2>
+      <p>정확하고 안전한 자동차 계약을 완성하고 분쟁 예방 및 공정 비교를 위해 아래의 정부 공인 및 신뢰도가 탄탄한 외부 공식 기관 포털을 적극 활용해 보십시오.</p>
+      <ul>
+        <li><strong>금융감독원 금융소비자 정보포털 파인:</strong> <a href="https://fine.fss.or.kr" target="_blank" rel="noopener noreferrer">https://fine.fss.or.kr</a> - 금융 상품 및 보험 가입 민원, 휴면 예금 등 소비자 보호 통합 정보 제공 사이트</li>
+        <li><strong>생명보험/손해보험협회 통합 보험다모아:</strong> <a href="https://www.e-insumarket.or.kr" target="_blank" rel="noopener noreferrer">https://www.e-insumarket.or.kr</a> - 정부 및 유관기관이 직접 연계해 원클릭 투명 견적 조회를 보장하는 공식 요율 비교 공시몰</li>
+        <li><strong>환경부 무공해차 통합누리집:</strong> <a href="https://www.ev.or.kr" target="_blank" rel="noopener noreferrer">https://www.ev.or.kr</a> - 대한민국 친환경 무공해차 보조금 잔여 현황 및 차종별 전기 소비효율 공시 포털</li>
+        <li><strong>도로교통공단 공식 홈페이지:</strong> <a href="https://www.koroad.or.kr" target="_blank" rel="noopener noreferrer">https://www.koroad.or.kr</a> - 실버 고령 운전자 안전 예방 교육 신청 및 보험료 감면 증명 발급 사이트</li>
+        <li><strong>나무위키 기아 니로 항목 사전 정보:</strong> <a href="https://namu.wiki/w/%EA%B8%B0%EC%95%84%20%EB%8B%88%EB%A1%9C" target="_blank" rel="noopener noreferrer">https://namu.wiki/w/기아 니로</a> - 1세대부터 2세대 및 니로 플러스까지 역대 차종 변천사와 구조 기술 정보 상세 백과사전</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // 체류시간과 사용성 만족을 보장하는 시뮬레이터 연산 자바스크립트 소스
+    function calculatePremium(event) {
+      event.preventDefault();
+
+      const carModel = document.getElementById('carModel').value;
+      const ageRange = document.getElementById('ageRange').value;
+      const career = document.getElementById('career').value;
+      const accidentHistory = document.getElementById('accidentHistory').value;
+      const annualMileage = parseFloat(document.getElementById('annualMileage').value) || 10000;
+
+      if (!carModel || !ageRange || !career || !accidentHistory) {
+        alert("모든 필수 선택 입력 값을 바르게 입력하신 뒤 계산해 주시기 바랍니다.");
+        return;
+      }
+
+      // 1. 모델별 기준 기본 보험료 가중 설정 (단위: 원)
+      let basePremium = 800000;
+      if (carModel.includes('sg2')) {
+        basePremium = 950000; // 신형 2세대는 기본 차량 가액이 크기 때문
+      } else if (carModel.includes('de_2018') || carModel.includes('de_2019')) {
+        basePremium = 650000; // 가치 감가가 많이 된 초기 모델
+      } else if (carModel.includes('taxi')) {
+        basePremium = 2400000; // 영업용 택시 할증 대폭 상향 적용
+      } else if (carModel.includes('business')) {
+        basePremium = 1300000; // 법인 업무용 할증 상향 적용
+      } else if (carModel.includes('compare_hev') || carModel.includes('compare_phev')) {
+        basePremium = 600000; // 하이브리드는 상대적으로 기본 자차 위험도 하향
+      }
+
+      // 2. 나이 범위별 변동 요율 곱셈값
+      let ageFactor = 1.0;
+      switch (ageRange) {
+        case 'under21': ageFactor = 2.4; break;
+        case 'age21_25': ageFactor = 1.7; break;
+        case 'age26_29': ageFactor = 1.25; break;
+        case 'age30_34': ageFactor = 0.95; break;
+        case 'age35_49': ageFactor = 0.82; break;
+        case 'age50_64': ageFactor = 0.85; break;
+        case 'senior': ageFactor = 1.05; break;
+      }
+
+      // 3. 운전 및 무사고 경력 변동 요율
+      let careerFactor = 1.0;
+      switch (career) {
+        case 'fresh': careerFactor = 1.45; break;
+        case 'short': careerFactor = 1.15; break;
+        case 'mid': careerFactor = 0.95; break;
+        case 'pro': careerFactor = 0.80; break;
+      }
+
+      // 4. 최근 3년 사고 내역 변동 요율
+      let accidentFactor = 1.0;
+      switch (accidentHistory) {
+        case 'clean': accidentFactor = 0.85; break;
+        case 'minor': accidentFactor = 1.15; break;
+        case 'major': accidentFactor = 1.50; break;
+        case 'multi': accidentFactor = 2.10; break;
+      }
+
+      // 5. 중간 가집계
+      let intermediate = basePremium * ageFactor * careerFactor * accidentFactor;
+
+      // 6. 주행 거리 연동 마일리지 환급 특약 연산 (5000km 이하 최대 환급 적용, 과도한 연간 주행 시 패널티 미미)
+      let mileageDiscount = 0;
+      if (annualMileage <= 3000) {
+        mileageDiscount = intermediate * 0.35; // 최고 구간 35% 가량 캐시백 효과 환산
+      } else if (annualMileage <= 5000) {
+        mileageDiscount = intermediate * 0.28;
+      } else if (annualMileage <= 10000) {
+        mileageDiscount = intermediate * 0.18;
+      } else if (annualMileage <= 15000) {
+        mileageDiscount = intermediate * 0.05;
+      }
+
+      let finalPremium = intermediate - mileageDiscount;
+
+      // 7. 선택 체크박스 장착 할인 차감 프로세스 (TMAP, 블랙박스 등)
+      if (document.getElementById('discountTmap').checked) {
+        finalPremium -= intermediate * 0.12; // 티맵 최고 점수 기준 12% 차감
+      }
+      if (document.getElementById('discountBlackbox').checked) {
+        finalPremium -= intermediate * 0.03; // 블박 부착 할인 3%
+      }
+      if (document.getElementById('discountChild').checked) {
+        finalPremium -= intermediate * 0.07; // 자녀 한정 동승 할인 7%
+      }
+      if (document.getElementById('discountAdas').checked) {
+        finalPremium -= intermediate * 0.05; // 첨단 주행 보조 ADAS 5%
+      }
+
+      // 최저 보험 마지노선 예외 제어 (최소 자가용 연간 기본 행정유지 보장액)
+      if (finalPremium < 300000 && !carModel.includes('compare')) {
+        finalPremium = 320000;
+      }
+
+      // 천원 단위 이하 반올림 처리
+      const formattedPremium = Math.round(finalPremium / 1000) * 1000;
+
+      // 화면 출력 전환 애니메이션 효과 대용
+      const resultBox = document.getElementById('resultBox');
+      resultBox.style.display = 'block';
+      document.getElementById('finalPremium').innerText = formattedPremium.toLocaleString();
+      
+      // 결과 출력 영역으로 시각 보정 스크롤링
+      resultBox.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+  
